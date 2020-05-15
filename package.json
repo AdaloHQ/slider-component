@@ -2,6 +2,7 @@
   "name": "range-slider",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "index",
   "scripts": {
     "start": "adalo dev",
     "build": "adalo build",

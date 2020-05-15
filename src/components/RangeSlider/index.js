@@ -3,16 +3,16 @@ import { Text, View, StyleSheet } from 'react-native'
 import MultiSlider from '@ptomasroos/react-native-multi-slider'
 
 class RangeSlider extends Component {
+
 	render() {
-		const { color, text, minValue, maxValue} = this.props
+		const {text, minValue, maxValue, incrementSize, filledColor, unfilledColor, height, orient, markerColor, markerSize} = this.props
 
 		return (
 			<View style={styles.wrapper}>
-				<Text style={{ color }}>{text}</Text>
+				<Text style={unfilledColor}>{text}</Text>
 				<MultiSlider
 					min={minValue}
 					max={maxValue}
-					currentValue={5}
 					enabledOne
 				/>
 			</View>
