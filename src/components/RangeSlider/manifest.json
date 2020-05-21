@@ -1,9 +1,10 @@
 {
-  "displayName": "Range Slider",
-  "defaultWidth": 160,
+	"displayName": "Range Slider",
+	"defaultWidth": 160,
   "defaultHeight": 24,
-  "components": "./index.js",
-  "props": [
+  "resizeY": true,
+  "components": "./index.js", 
+	"props": [
     {
       "name": "text",
       "displayName": "Text",
@@ -11,93 +12,162 @@
       "default": "Happy Hacking"
     },
     {
+      "name": "color",
+      "displayName": "Text Color",
+      "type": "color",
+      "default": "#000000"
+    },
+    {
       "name": "minValue",
       "displayName": "Minimum Value",
       "type": "number",
-      "default": "0"
+      "default": 1
     },
     {
       "name": "maxValue",
       "displayName": "Maximum Value",
       "type": "number",
-      "default": "10"
+      "default": 10
     },
     {
       "name": "incrementSize",
       "displayName": "Increment Size",
       "type": "number",
-      "default": "1"
+      "default": 1
     }
-  ],
-  "childComponents": [
-     {
-       "name": "Track",
-       "role": "listItem",
-       "reference": "text",
-       "props": [
-            {
-              "name": "filledColor",
-              "displayName": "Filled Color",
-              "type": "color",
-              "default": "#00A898"
-            },
-            {
-              "name": "unfilledColor",
-              "displayName": "Unfilled Color",
-              "type": "color",
-              "default": "#00A898"
-            },
-            {
-              "name": "height",
-              "displayName": "Height",
-              "type": "number",
-              "default": "2"
-            },
-            {
-              "name": "orient",
-              "displayName": "Orientation",
-              "type": "string",
-              "default": "Horizontal"
-            }
-       ]
-     },
-     {
-      "name": "Marker",
-      "role": "listItem",
-      "reference": "text",
+	],
+	"childComponents": [
+	  {
+      "name": "track",
+      "displayName": "Track",
       "props": [
-           {
-             "name": "markerColor",
-             "displayName": "Marker Color",
-             "type": "color",
-             "default": "#00A898"
-           },
-           {
-            "name": "markerSize",
-            "displayName": "Marker Size",
-            "type": "number",
-            "default": "2"
+        {
+          "name": "filledColor",
+          "displayName": "Filled Color",
+          "type": "color",
+          "default": "#C0C0C0"
+        },
+        {
+          "name": "unfilledColor",
+          "displayName": "Unfilled Color",
+          "type": "color",
+          "default": "#000000"
+        },
+        {
+          "name": "orient",
+          "displayName": "Orientation",
+          "type": "boolean",
+          "default": false,
+          "control": {
+          "type": "menu",
+          "options": [
+            { "label": "Horizontal", "value": false },
+            { "label": "Vertical", "value": true }
+          ]
           }
-      ]
+        },
+        {
+          "name": "height",
+          "displayName": "Height",
+          "type": "number",
+          "default": 2
+        },
+        {
+          "name": "width",
+          "displayName": "Width",
+          "type": "number",
+          "default": 280
+        }
+	  ]
+	  },
+	  {
+	"name": "marker",
+	"displayName": "Marker",
+	"props": [
+		{
+		  "name": "markerColor",
+		  "displayName": "Marker Color",
+		  "type": "color",
+		  "default": "#FFFFFF"
+		},
+		{
+      "name": "markerSize",
+      "displayName": "Marker Size",
+      "type": "number",
+      "default": 30
     },
     {
-      "name": "Labels",
-      "role": "listItem",
-      "reference": "text",
-      "props": [
-           {
-             "name": "bgColor",
-             "displayName": "Background Color",
-             "type": "color",
-             "default": "#00A898"
-           },
-           {
-            "name": "padding",
-            "displayName": "Padding",
-            "type": "number",
-            "default": "2"
-          }
-      ]
+      "name": "markerBorder",
+      "displayName": "Border",
+      "type": "boolean",
+      "default": true
+    },
+    {
+		  "name": "markerBorderColor",
+		  "displayName": "Color",
+		  "type": "color",
+		  "default": "#DDDDDD"
+    },
+    {
+      "name": "markerBorderNum",
+      "displayName": " ",
+		  "type": "number",
+		  "default": 1
+	  },
+    {
+      "name": "shadow",
+      "displayName": "Shadow",
+      "type": "boolean",
+      "default": true
     }
+	]
+	},
+	{
+	"name": "labels",
+	"displayName": "Labels",
+	"props": [
+		{
+		  "name": "enabled",
+		  "type": "boolean",
+		  "default": false
+		},
+		{
+		  "name": "bgColor",
+		  "displayName": "Background Color",
+		  "type": "color",
+		  "default": "#FFFFFF"
+    },
+    {
+		  "name": "txtColor",
+		  "displayName": "Text Color",
+		  "type": "color",
+		  "default": "#000000"
+		},
+		{
+      "name": "font",
+      "displayName": "Font Size",
+      "type": "number",
+      "default": 18
+    },
+    {
+      "name": "labelBorder",
+      "displayName": "Border",
+      "type": "boolean",
+      "default": true
+    },
+    {
+		  "name": "labelBorderColor",
+		  "displayName": "Color",
+		  "type": "color",
+		  "default": "#000000"
+    },
+    {
+      "name": "labelBorderNum",
+      "displayName": " ",
+		  "type": "number",
+		  "default": 1
+	  }
+	]
+	}
   ]
 }
