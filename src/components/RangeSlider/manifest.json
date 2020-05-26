@@ -26,8 +26,8 @@
     {
       "name": "controlledValue",
       "displayName": "Value",
-      "type": "action",
-      "role": "controlledInput"
+      "type": "number",
+      "role": "autosaveInput"
     }
 	],
 	"childComponents": [

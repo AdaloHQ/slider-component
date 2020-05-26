@@ -57,20 +57,16 @@ class RangeSlider extends Component {
 					customLabel={(props)=> <CustomLabel {...props} bgColor={bgColor} txtColor = {txtColor} font={font}
 											labelBorder={labelBorder} labelBorderColor={labelBorderColor} labelBorderNum={labelBorderNum}/>}
 					// database
-					onValuesChange={this.sliderValuesChange}
+					onValuesChangeFinish={this.sliderValuesChange}
 				/>
 			</View>
 		)
 	}
 
 	sliderValuesChange = values => {
-		const {value, onChange} = this.props; 
-		console.log(values[0])
-		// return onChange(values[0])
-	}
-
-	onChange = input => {
-		return input;
+		const {value, onChange} = this.props.controlledValue; 
+		console.log(this.props);
+		return onChange(values[0])
 	}
 }
 
