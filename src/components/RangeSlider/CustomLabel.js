@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Animated } from 'react-native';
+import { View, Text, Animated,Dimensions } from 'react-native';
 import StyleSheetFactory2 from "./styles2"
 
 const AnimatedView = Animated.createAnimatedComponent(View);
@@ -8,25 +8,23 @@ const width = 50;
 
 function LabelBase(props) {
   const { position, value, leftDiff, pressed } = props;
-  const scaleValue = React.useRef(new Animated.Value(0.1)); // Behaves oddly if set to 0
+  const scaleValue = React.useRef(new Animated.Value(0.0)); // Behaves oddly if set to 0
   const cachedPressed = React.useRef(pressed);
   const {bgColor, txtColor, font, labelBorder, labelBorderColor, labelBorderNum} = props;
   let myStyleSheet = StyleSheetFactory2.getSheet(bgColor, txtColor, font, labelBorderColor, labelBorderNum);
-
   React.useEffect(() => {
     Animated.timing(scaleValue.current, {
-      toValue: pressed ? 1 : 0.1,
+      toValue: pressed ? 1 : 0.0,
       duration: 200,
       delay: pressed ? 0 : 2000,
       useNativeDriver: false,
     }).start();
     cachedPressed.current = pressed;
   }, [pressed]);
-  
   return (
     Number.isFinite(position) &&
     Number.isFinite(value) && (
-      <AnimatedView
+      <AnimatedView 
         style={[
           myStyleSheet.sliderLabel,
           {
@@ -38,7 +36,6 @@ function LabelBase(props) {
             ],
           },
         ]}>
-        <View style={myStyleSheet.pointer} />
         <Text style={myStyleSheet.sliderLabelText}>{value}</Text>
       </AnimatedView>
     )
@@ -58,7 +55,7 @@ class CustomLabel extends React.Component {
     return (
       <View style={{position: 'relative'}}>
         <LabelBase {...this.props} bgColor={bgColor} txtColor= {txtColor} font={font}
-											labelBorder={labelBorder} labelBorderColor={labelBorderColor} labelBorderNum={labelBorderNum}
+                      labelBorder={labelBorder} labelBorderColor={labelBorderColor} labelBorderNum={labelBorderNum}
           position={oneMarkerLeftPosition}
           value={oneMarkerValue}
           leftDiff={leftDiff}

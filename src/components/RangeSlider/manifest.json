@@ -6,18 +6,6 @@
   "components": "./index.js", 
 	"props": [
     {
-      "name": "text",
-      "displayName": "Text",
-      "type": "text",
-      "default": "Happy Hacking"
-    },
-    {
-      "name": "color",
-      "displayName": "Text Color",
-      "type": "color",
-      "default": "#000000"
-    },
-    {
       "name": "minValue",
       "displayName": "Minimum Value",
       "type": "number",
@@ -34,6 +22,12 @@
       "displayName": "Increment Size",
       "type": "number",
       "default": 1
+    },
+    {
+      "name": "controlledValue",
+      "displayName": "Value",
+      "type": "action",
+      "role": "controlledInput"
     }
 	],
 	"childComponents": [
@@ -45,38 +39,19 @@
           "name": "filledColor",
           "displayName": "Filled Color",
           "type": "color",
-          "default": "#C0C0C0"
+          "default": "@primary"
         },
         {
           "name": "unfilledColor",
           "displayName": "Unfilled Color",
           "type": "color",
-          "default": "#000000"
-        },
-        {
-          "name": "orient",
-          "displayName": "Orientation",
-          "type": "boolean",
-          "default": false,
-          "control": {
-          "type": "menu",
-          "options": [
-            { "label": "Horizontal", "value": false },
-            { "label": "Vertical", "value": true }
-          ]
-          }
+          "default": "#000"
         },
         {
           "name": "height",
           "displayName": "Height",
           "type": "number",
           "default": 2
-        },
-        {
-          "name": "width",
-          "displayName": "Width",
-          "type": "number",
-          "default": 280
         }
 	  ]
 	  },
@@ -88,7 +63,7 @@
 		  "name": "markerColor",
 		  "displayName": "Marker Color",
 		  "type": "color",
-		  "default": "#FFFFFF"
+		  "default": "#fff"
 		},
 		{
       "name": "markerSize",
@@ -106,7 +81,7 @@
 		  "name": "markerBorderColor",
 		  "displayName": "Color",
 		  "type": "color",
-		  "default": "#DDDDDD"
+		  "default": "#ddd"
     },
     {
       "name": "markerBorderNum",
@@ -135,38 +110,20 @@
 		  "name": "bgColor",
 		  "displayName": "Background Color",
 		  "type": "color",
-		  "default": "#FFFFFF"
+		  "default": "#fff"
     },
     {
 		  "name": "txtColor",
 		  "displayName": "Text Color",
 		  "type": "color",
-		  "default": "#000000"
+		  "default": "@primary"
 		},
 		{
       "name": "font",
       "displayName": "Font Size",
       "type": "number",
       "default": 18
-    },
-    {
-      "name": "labelBorder",
-      "displayName": "Border",
-      "type": "boolean",
-      "default": true
-    },
-    {
-		  "name": "labelBorderColor",
-		  "displayName": "Color",
-		  "type": "color",
-		  "default": "#000000"
-    },
-    {
-      "name": "labelBorderNum",
-      "displayName": " ",
-		  "type": "number",
-		  "default": 1
-	  }
+    }
 	]
 	}
   ]
