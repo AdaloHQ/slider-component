@@ -17,7 +17,7 @@
     "react-native": "*"
   },
   "adalo": {
-    "displayName": "Range Slider",
+    "displayName": "Slider",
     "components": [
       {
         "name": "RangeSlider",

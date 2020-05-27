@@ -1,10 +1,11 @@
 import {StyleSheet, Platform } from 'react-native';
 export default class StyleSheetFactory {
-    static getSheet(markerColor, markerSize, shadowNum, markerBorderColor, markerBorderNum) {
+    static getSheet(markerColor, markerSize, shadowNum, markerBorderColor, markerBorderNum, heightNum) {
         return StyleSheet.create({
           markerStyle: {
             ...Platform.select({
               ios: {
+                marginTop:heightNum,
                 height: markerSize,
                 width: markerSize,
                 borderRadius: markerSize,
@@ -20,12 +21,14 @@ export default class StyleSheetFactory {
                 shadowOpacity: 0.2,
               },
               android: {
+                marginTop:heightNum,
                 height: markerSize,
                 width: markerSize,
                 borderRadius: markerSize,
                 backgroundColor: markerColor,
               },
               web: {
+                marginTop:heightNum,
                 height: markerSize,
                 width: markerSize,
                 borderRadius: markerSize,
@@ -44,6 +47,7 @@ export default class StyleSheetFactory {
           },
           pressedMarkerStyle: {
             ...Platform.select({
+              marginTop:heightNum,
               web: {},
               ios: {},
               android: {

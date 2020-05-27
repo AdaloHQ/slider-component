@@ -4,16 +4,21 @@ import StyleSheetFactory from "./styles"
 
 class DefaultMarker extends React.Component {
   render() {
-    const {markerColor, markerSize, shadow, markerBorder, markerBorderColor, bgColor} = this.props;
+    const {markerColor, markerSize, shadow, markerBorder, markerBorderColor, height} = this.props;
     let {markerBorderNum} = this.props;
     let shadowNum = 0;
     if(shadow){
       shadowNum = 3;
     }
+    if(markerBorder === "No"){
+      
+    }
     if(!markerBorder){
       markerBorderNum = 0;
     }
-    let myStyleSheet = StyleSheetFactory.getSheet(markerColor, markerSize, shadowNum, markerBorderColor, markerBorderNum);
+    let heightNum = height-2;
+    console.log(height);
+    let myStyleSheet = StyleSheetFactory.getSheet(markerColor, markerSize, shadowNum, markerBorderColor, markerBorderNum, heightNum);
     return (
       <TouchableHighlight>
         <View

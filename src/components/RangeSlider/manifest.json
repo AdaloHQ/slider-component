@@ -1,10 +1,16 @@
 {
-	"displayName": "Range Slider",
-	"defaultWidth": 160,
-  "defaultHeight": 24,
+	"displayName": "Slider",
+	"defaultWidth": 280,
+  "defaultHeight": 50,
   "resizeY": true,
   "components": "./index.js", 
 	"props": [
+    {
+      "name": "controlledValue",
+      "displayName": "What Property Does This Adjust?",
+      "type": "number",
+      "role": "autosaveInput"
+    },
     {
       "name": "minValue",
       "displayName": "Minimum Value",
@@ -22,12 +28,6 @@
       "displayName": "Increment Size",
       "type": "number",
       "default": 1
-    },
-    {
-      "name": "controlledValue",
-      "displayName": "Value",
-      "type": "number",
-      "role": "autosaveInput"
     }
 	],
 	"childComponents": [
@@ -45,13 +45,24 @@
           "name": "unfilledColor",
           "displayName": "Unfilled Color",
           "type": "color",
-          "default": "#000"
+          "default": "#e0e0e0"
         },
         {
           "name": "height",
           "displayName": "Height",
           "type": "number",
           "default": 2
+        },
+        {
+          "name": "trackRounding",
+          "displayName": "Rounding",
+          "type": "number",
+          "control": {
+            "type": "slider",
+            "max": 5,
+            "min": 0
+          },
+          "default": 5
         }
 	  ]
 	  },
@@ -79,16 +90,18 @@
     },
     {
 		  "name": "markerBorderColor",
-		  "displayName": "Color",
+		  "displayName": "Border Color",
 		  "type": "color",
-		  "default": "#ddd"
+      "default": "#ddd",
+      "enabled": { "markerBorder": true }
     },
     {
       "name": "markerBorderNum",
-      "displayName": " ",
+      "displayName": "Border Size",
 		  "type": "number",
-		  "default": 1
-	  },
+      "default": 1,
+      "enabled": { "markerBorder": true }
+    },
     {
       "name": "shadow",
       "displayName": "Shadow",
@@ -120,9 +133,20 @@
 		},
 		{
       "name": "font",
-      "displayName": "Font Size",
+      "displayName": "Text Size",
       "type": "number",
       "default": 18
+    },
+    {
+      "name": "labelRounding",
+      "displayName": "Rounding",
+      "type": "number",
+      "control": {
+        "type": "slider",
+        "max": 50,
+        "min": 0
+      },
+      "default": 50
     }
 	]
 	}
