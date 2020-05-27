@@ -9,13 +9,13 @@ import DefaultMarker from './CustomMarker';
 // track: 
 // marker: 
 // labels: 
-// connect to database
 
-//done
-// values: min value, max value, increment size
-// track: height, filled color, unfilled color
+// done
+// values: database value, min value, max value, increment size
+// track: height, filled color, unfilled color, rounding
 // marker: marker color, marker size, shadow, border
-// labels: background color, font
+// labels: background color, text color, text size, rounding
+// connected to database
 
 class RangeSlider extends Component {
 
