@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import MultiSlider from '@ptomasroos/react-native-multi-slider'
 import CustomLabel from './CustomLabel';
 import DefaultMarker from './CustomMarker';

@@ -10,9 +10,6 @@ class DefaultMarker extends React.Component {
     if(shadow){
       shadowNum = 3;
     }
-    if(markerBorder === "No"){
-      
-    }
     if(!markerBorder){
       markerBorderNum = 0;
     }
