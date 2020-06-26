@@ -1,6 +1,7 @@
 {
   "name": "range-slider",
   "version": "1.0.0",
+  "author": "Adalo",
   "license": "MIT",
   "main": "index",
   "scripts": {
