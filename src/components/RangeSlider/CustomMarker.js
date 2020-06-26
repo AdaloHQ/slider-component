@@ -14,7 +14,6 @@ class DefaultMarker extends React.Component {
       markerBorderNum = 0;
     }
     let heightNum = height-2;
-    console.log(height);
     let myStyleSheet = StyleSheetFactory.getSheet(markerColor, markerSize, shadowNum, markerBorderColor, markerBorderNum, heightNum);
     return (
       <TouchableHighlight>
