@@ -18,6 +18,7 @@
     "react-native": "*"
   },
   "adalo": {
+    "logo": "./logo.png",
     "displayName": "Slider",
     "components": [
       {
