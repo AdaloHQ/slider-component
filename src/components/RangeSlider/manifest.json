@@ -1,11 +1,11 @@
 {
   "displayName": "Slider",
   "icon": "./icon.png",
-	"defaultWidth": 280,
+  "defaultWidth": 280,
   "defaultHeight": 50,
   "resizeY": true,
-  "components": "./index.js", 
-	"props": [
+  "components": "./index.js",
+  "props": [
     {
       "name": "controlledValue",
       "displayName": "What Property Does This Adjust?",
@@ -30,9 +30,9 @@
       "type": "number",
       "default": 1
     }
-	],
-	"childComponents": [
-	  {
+  ],
+  "childComponents": [
+    {
       "name": "track",
       "displayName": "Track",
       "props": [
@@ -52,7 +52,7 @@
           "name": "height",
           "displayName": "Height",
           "type": "number",
-          "default": 2
+          "default": 4
         },
         {
           "name": "trackRounding",
@@ -65,91 +65,91 @@
           },
           "default": 5
         }
-	  ]
-	  },
-	  {
-	"name": "marker",
-	"displayName": "Marker",
-	"props": [
-		{
-		  "name": "markerColor",
-		  "displayName": "Marker Color",
-		  "type": "color",
-		  "default": "#fff"
-		},
-		{
-      "name": "markerSize",
-      "displayName": "Marker Size",
-      "type": "number",
-      "default": 30
+      ]
     },
     {
-      "name": "markerBorder",
-      "displayName": "Border",
-      "type": "boolean",
-      "default": true
+      "name": "marker",
+      "displayName": "Marker",
+      "props": [
+        {
+          "name": "markerColor",
+          "displayName": "Marker Color",
+          "type": "color",
+          "default": "#fff"
+        },
+        {
+          "name": "markerSize",
+          "displayName": "Marker Size",
+          "type": "number",
+          "default": 30
+        },
+        {
+          "name": "markerBorder",
+          "displayName": "Border",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "markerBorderColor",
+          "displayName": "Border Color",
+          "type": "color",
+          "default": "#ddd",
+          "enabled": { "markerBorder": true }
+        },
+        {
+          "name": "markerBorderNum",
+          "displayName": "Border Size",
+          "type": "number",
+          "default": 1,
+          "enabled": { "markerBorder": true }
+        },
+        {
+          "name": "shadow",
+          "displayName": "Shadow",
+          "type": "boolean",
+          "default": true
+        }
+      ]
     },
     {
-		  "name": "markerBorderColor",
-		  "displayName": "Border Color",
-		  "type": "color",
-      "default": "#ddd",
-      "enabled": { "markerBorder": true }
-    },
-    {
-      "name": "markerBorderNum",
-      "displayName": "Border Size",
-		  "type": "number",
-      "default": 1,
-      "enabled": { "markerBorder": true }
-    },
-    {
-      "name": "shadow",
-      "displayName": "Shadow",
-      "type": "boolean",
-      "default": true
+      "name": "labels",
+      "displayName": "Labels",
+      "props": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "bgColor",
+          "displayName": "Background Color",
+          "type": "color",
+          "default": "#fff"
+        },
+        {
+          "name": "txtColor",
+          "displayName": "Text Color",
+          "type": "color",
+          "default": "@primary"
+        },
+        {
+          "name": "font",
+          "displayName": "Text Size",
+          "type": "number",
+          "default": 18
+        },
+        {
+          "name": "labelRounding",
+          "displayName": "Rounding",
+          "type": "number",
+          "control": {
+            "type": "slider",
+            "max": 50,
+            "min": 0
+          },
+          "default": 50
+        }
+      ]
     }
-	]
-	},
-	{
-	"name": "labels",
-	"displayName": "Labels",
-	"props": [
-		{
-		  "name": "enabled",
-		  "type": "boolean",
-		  "default": false
-		},
-		{
-		  "name": "bgColor",
-		  "displayName": "Background Color",
-		  "type": "color",
-		  "default": "#fff"
-    },
-    {
-		  "name": "txtColor",
-		  "displayName": "Text Color",
-		  "type": "color",
-		  "default": "@primary"
-		},
-		{
-      "name": "font",
-      "displayName": "Text Size",
-      "type": "number",
-      "default": 18
-    },
-    {
-      "name": "labelRounding",
-      "displayName": "Rounding",
-      "type": "number",
-      "control": {
-        "type": "slider",
-        "max": 50,
-        "min": 0
-      },
-      "default": 50
-    }
-	]
-	}
   ]
 }

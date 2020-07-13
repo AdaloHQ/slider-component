@@ -1,9 +1,9 @@
 {
   "name": "range-slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Adalo",
   "license": "MIT",
-  "main": "index",
+  "main": "index.js",
   "description": "Adjust a number property with a slider.  Customize min, max, step size, and styles.",
   "scripts": {
     "start": "adalo dev",
@@ -30,7 +30,7 @@
     ]
   },
   "devDependencies": {
-    "@adalo/cli": "^0.0.30",
+    "@adalo/cli": "^0.0.35",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.0.0",
