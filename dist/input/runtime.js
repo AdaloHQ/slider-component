@@ -1,3 +1,3 @@
 export {
   RangeSlider as RangeSlider,
-} from '../../index'
+} from '../../index.js'

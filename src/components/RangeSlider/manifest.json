@@ -16,7 +16,7 @@
       "name": "minValue",
       "displayName": "Minimum Value",
       "type": "number",
-      "default": 1
+      "default": 0
     },
     {
       "name": "maxValue",
