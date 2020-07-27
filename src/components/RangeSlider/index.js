@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import MultiSlider from '@ptomasroos/react-native-multi-slider'
 import CustomLabel from './CustomLabel'
 import DefaultMarker from './CustomMarker'
@@ -30,59 +30,55 @@ class RangeSlider extends Component {
     } = marker
     // labels
     const { enabled, bgColor, txtColor, font, labelRounding } = labels
-    const trackValue = editor ? Math.round((minValue + maxValue) / 3) : value
+    const trackValue = (editor || value===undefined) ? minValue : value
     return (
       <View style={styles.wrapper}>
-        {trackValue !== undefined ? (
-          <MultiSlider
-            enabledOne
-            // values
-            min={minValue}
-            values={[trackValue]}
-            max={maxValue}
-            step={incrementSize}
-            currentValue={[trackValue]}
-            // track
-            trackStyle={{
-              backgroundColor: unfilledColor,
-              height: height,
-              borderRadius: trackRounding,
-            }}
-            selectedStyle={{
-              backgroundColor: filledColor,
-              height: height,
-              borderRadius: trackRounding,
-            }}
-            // marker
-            customMarker={(props) => (
-              <DefaultMarker
-                {...props}
-                markerColor={markerColor}
-                markerSize={markerSize}
-                shadow={shadow}
-                markerBorder={markerBorder}
-                markerBorderColor={markerBorderColor}
-                markerBorderNum={markerBorderNum}
-                height={height}
-              />
-            )}
-            // labels
-            enableLabel={enabled}
-            customLabel={(props) => (
-              <CustomLabel
-                {...props}
-                bgColor={bgColor}
-                txtColor={txtColor}
-                font={font}
-                labelRounding={labelRounding}
-              />
-            )}
-            // database
-            onValuesChangeFinish={this.sliderValuesChange}
-          />
-        ) : (
-          <ActivityIndicator color={filledColor} />
-        )}
+        <MultiSlider
+          enabledOne
+          // values
+          min={minValue}
+          values={[trackValue]}
+          max={maxValue}
+          step={incrementSize}
+          currentValue={[trackValue]}
+          // track
+          trackStyle={{
+            backgroundColor: unfilledColor,
+            height: height,
+            borderRadius: trackRounding,
+          }}
+          selectedStyle={{
+            backgroundColor: filledColor,
+            height: height,
+            borderRadius: trackRounding,
+          }}
+          // marker
+          customMarker={(props) => (
+            <DefaultMarker
+              {...props}
+              markerColor={markerColor}
+              markerSize={markerSize}
+              shadow={shadow}
+              markerBorder={markerBorder}
+              markerBorderColor={markerBorderColor}
+              markerBorderNum={markerBorderNum}
+              height={height}
+            />
+          )}
+          // labels
+          enableLabel={enabled}
+          customLabel={(props) => (
+            <CustomLabel
+              {...props}
+              bgColor={bgColor}
+              txtColor={txtColor}
+              font={font}
+              labelRounding={labelRounding}
+            />
+          )}
+          // database
+          onValuesChangeFinish={this.sliderValuesChange}
+        />
       </View>
     )
   }
