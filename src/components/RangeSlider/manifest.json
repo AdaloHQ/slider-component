@@ -1,7 +1,7 @@
 {
   "displayName": "Slider",
   "icon": "./icon.png",
-  "defaultWidth": 280,
+  "defaultWidth": 343,
   "defaultHeight": 50,
   "components": "./index.js",
   "props": [
@@ -51,6 +51,11 @@
           "name": "height",
           "displayName": "Height",
           "type": "number",
+          "control": {
+            "type": "slider",
+            "max": 50,
+            "min": 1
+          },
           "default": 4
         },
         {
@@ -80,6 +85,11 @@
           "name": "markerSize",
           "displayName": "Marker Size",
           "type": "number",
+          "control": {
+            "type": "slider",
+            "max": 50,
+            "min": 10
+          },
           "default": 30
         },
         {
