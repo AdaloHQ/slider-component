@@ -30,7 +30,7 @@
     ]
   },
   "devDependencies": {
-    "@adalo/cli": "^0.0.38",
+    "@adalo/cli": "^0.0.39",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.0.0",
@@ -50,6 +50,7 @@
     "react-native-web": "^0.9.5"
   },
   "dependencies": {
-    "@ptomasroos/react-native-multi-slider": "^2.2.2"
+    "@adalo/react-native-multi-slider": "^2.2.3-alpha.0",
+    "prop-types": "^15.7.2"
   }
 }
