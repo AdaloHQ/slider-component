@@ -3,7 +3,6 @@
   "icon": "./icon.png",
   "defaultWidth": 280,
   "defaultHeight": 50,
-  "resizeY": true,
   "components": "./index.js",
   "props": [
     {
