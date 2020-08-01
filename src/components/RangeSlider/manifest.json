@@ -103,14 +103,18 @@
           "displayName": "Border Color",
           "type": "color",
           "default": "#ddd",
-          "enabled": { "markerBorder": true }
+          "enabled": {
+            "markerBorder": true
+          }
         },
         {
           "name": "markerBorderNum",
           "displayName": "Border Size",
           "type": "number",
           "default": 1,
-          "enabled": { "markerBorder": true }
+          "enabled": {
+            "markerBorder": true
+          }
         },
         {
           "name": "shadow",
@@ -133,13 +137,13 @@
           "name": "bgColor",
           "displayName": "Background Color",
           "type": "color",
-          "default": "#fff"
+          "default": "@primary"
         },
         {
           "name": "txtColor",
           "displayName": "Text Color",
           "type": "color",
-          "default": "@primary"
+          "default": "@contrast:bgColor"
         },
         {
           "name": "font",
