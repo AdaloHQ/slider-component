@@ -16,7 +16,7 @@ class RangeSlider extends Component {
     }
   }
 
-  sliderValuesChange = (values) => {
+  sliderValuesChange = values => {
     // database onchange props
     const {
       controlledValue: { onChange },
@@ -55,7 +55,7 @@ class RangeSlider extends Component {
 
     // labels
     const { enabled, bgColor, txtColor, font, labelRounding } = labels
-    const trackValue = (editor || value === undefined) ? minValue : value
+    const trackValue = editor || value === undefined ? minValue : value
 
     const padding = Math.ceil(markerSize / 2)
     const paddingStyles = { paddingLeft: padding, paddingRight: padding }
@@ -87,7 +87,7 @@ class RangeSlider extends Component {
               borderRadius: trackRounding,
             }}
             // marker
-            customMarker={(props) => (
+            customMarker={props => (
               <DefaultMarker
                 {...props}
                 markerColor={markerColor}
@@ -101,7 +101,7 @@ class RangeSlider extends Component {
             )}
             // labels
             enableLabel={enabled}
-            customLabel={(props) => (
+            customLabel={props => (
               <CustomLabel
                 {...props}
                 bgColor={bgColor}
@@ -113,6 +113,7 @@ class RangeSlider extends Component {
             // database
             onValuesChangeFinish={this.sliderValuesChange}
             sliderLength={sliderLength}
+            snapped={true}
           />
         )}
       </View>
