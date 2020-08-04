@@ -10,6 +10,7 @@ export default class StyleSheetFactory2 {
         bottom: '100%',
         width: width,
         height: width,
+        borderRadius: labelRounding / 2,
       },
       sliderLabelText: {
         textAlign: 'center',

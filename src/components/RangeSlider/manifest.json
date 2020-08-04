@@ -149,7 +149,12 @@
           "name": "font",
           "displayName": "Text Size",
           "type": "number",
-          "default": 18
+          "default": 18,
+          "control": {
+            "type": "slider",
+            "max": 40,
+            "min": 0
+          }
         },
         {
           "name": "labelRounding",

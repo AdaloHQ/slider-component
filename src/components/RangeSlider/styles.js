@@ -33,6 +33,7 @@ export default class StyleSheetFactory {
             width: markerSize,
             borderRadius: markerSize,
             backgroundColor: markerColor,
+            elevation: shadowNum,
           },
           web: {
             marginTop: heightNum,
