@@ -41,7 +41,9 @@ function LabelBase(props) {
           },
         ]}
       >
-        <Text style={myStyleSheet.sliderLabelText}>{value}</Text>
+        <View style={myStyleSheet.sliderLabelWrapper}>
+          <Text style={myStyleSheet.sliderLabelText}>{value}</Text>
+        </View>
       </AnimatedView>
     )
   )
