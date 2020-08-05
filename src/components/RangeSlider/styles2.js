@@ -12,18 +12,21 @@ export default class StyleSheetFactory2 {
         height: width,
         borderRadius: labelRounding / 2,
       },
-      sliderLabelText: {
-        textAlign: 'center',
-        lineHeight: width,
+      sliderLabelWrapper: {
         borderRadius: labelRounding / 2,
         borderWidth: 2,
         borderColor: '#fff',
         backgroundColor: bgColor,
-        flex: 1,
-        fontSize: font,
-        color: txtColor,
         width: width,
         height: width,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      sliderLabelText: {
+        textAlign: 'center',
+        fontSize: font,
+        color: txtColor,
       },
     })
   }
