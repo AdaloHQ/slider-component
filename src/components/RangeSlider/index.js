@@ -30,7 +30,6 @@ class RangeSlider extends Component {
 
     // values
     const {
-      minValue,
       maxValue,
       incrementSize,
       track,
@@ -39,6 +38,9 @@ class RangeSlider extends Component {
       controlledValue: { value },
       editor,
     } = this.props
+
+    let { minValue } = this.props
+    if (!minValue) minValue = 0
 
     // track
     const { filledColor, unfilledColor, height, trackRounding } = track
