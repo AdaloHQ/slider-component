@@ -108,6 +108,7 @@ class RangeSlider extends Component {
                 txtColor={txtColor}
                 font={font}
                 labelRounding={labelRounding}
+                bodyFont={track.styles ? track.styles.bodyFont : {}}
               />
             )}
             // database
