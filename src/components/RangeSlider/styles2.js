@@ -2,7 +2,7 @@ const width = 50
 
 import { StyleSheet } from 'react-native'
 export default class StyleSheetFactory2 {
-  static getSheet(bgColor, txtColor, font, labelRounding) {
+  static getSheet(bgColor, txtColor, font, labelRounding, bodyFont) {
     return StyleSheet.create({
       sliderLabel: {
         position: 'absolute',
@@ -27,6 +27,7 @@ export default class StyleSheetFactory2 {
         textAlign: 'center',
         fontSize: font,
         color: txtColor,
+        ...bodyFont,
       },
     })
   }

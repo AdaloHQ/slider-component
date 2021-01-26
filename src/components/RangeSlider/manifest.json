@@ -68,6 +68,16 @@
             "min": 0
           },
           "default": 5
+        },
+        {
+          "name": "bodyFont",
+          "type": "text",
+          "styles": {
+            "fontFamily": "@body"
+          },
+          "enabled": {
+            "trackRounding": 6
+          }
         }
       ]
     },

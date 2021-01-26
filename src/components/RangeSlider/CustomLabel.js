@@ -8,12 +8,13 @@ function LabelBase(props) {
   const { position, value, leftDiff, pressed } = props
   const scaleValue = React.useRef(new Animated.Value(0.0)) // Behaves oddly if set to 0
   const cachedPressed = React.useRef(pressed)
-  const { bgColor, txtColor, font, labelRounding } = props
+  const { bgColor, txtColor, font, labelRounding, bodyFont } = props
   let myStyleSheet = StyleSheetFactory2.getSheet(
     bgColor,
     txtColor,
     font,
-    labelRounding
+    labelRounding,
+    bodyFont
   )
   const width = 50
   React.useEffect(() => {
