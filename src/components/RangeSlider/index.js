@@ -38,6 +38,7 @@ class RangeSlider extends Component {
       labels,
       controlledValue: { value },
       editor,
+      _fonts,
     } = this.props
 
     // track
@@ -108,7 +109,11 @@ class RangeSlider extends Component {
                 txtColor={txtColor}
                 font={font}
                 labelRounding={labelRounding}
-                bodyFont={track.styles ? track.styles.bodyFont : {}}
+                bodyFont={
+                  track.styles
+                    ? track.styles.bodyFont
+                    : { fontFamily: _fonts.body }
+                }
               />
             )}
             // database
