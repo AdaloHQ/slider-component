@@ -76,10 +76,7 @@ class RangeSlider extends Component {
     const padding = Math.ceil(markerSize / 2)
     const paddingStyles = { paddingLeft: padding, paddingRight: padding }
     const sliderLength = width - padding * 2
-
-    console.log("LABELS", [trackValue])
-    console.log("INCREMENT SIZE GIVEN", incrementSize)
-
+    
     return (
       <View
         style={[styles.wrapper, paddingStyles]}
