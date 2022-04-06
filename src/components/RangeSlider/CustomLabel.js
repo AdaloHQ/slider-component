@@ -60,7 +60,7 @@ class CustomLabel extends Component {
       roundLabelValue
     } = this.props
 
-    const roundedMarkerValue = roundLabelValue(oneMarkerValue)
+    const roundedValue = roundLabelValue(oneMarkerValue)
 
     const { bgColor, font, txtColor, labelRounding } = this.props
     return (
@@ -72,7 +72,7 @@ class CustomLabel extends Component {
           font={font}
           labelRounding={labelRounding}
           position={oneMarkerLeftPosition}
-          value={roundedMarkerValue}
+          value={roundedValue}
           leftDiff={leftDiff}
           pressed={oneMarkerPressed}
         />
