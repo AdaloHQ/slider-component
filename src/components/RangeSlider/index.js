@@ -21,11 +21,14 @@ class RangeSlider extends Component {
       incrementSize
     } = this.props
 
+    // precision function => obtains number of digits after decimal point of incrementSize
     if (!isFinite(incrementSize) || incrementSize <= 0) return value;
-    var e = 1, p = 0;
-    while (Math.round(incrementSize * e) / e !== incrementSize) { e *= 10; p++; }
+    let multiplier = 1, precision = 0;
+    while (Math.round(incrementSize * multiplier) / multiplier !== incrementSize) { 
+      multiplier *= 10; precision++; 
+    }
 
-    var finalValue = parseFloat(value.toFixed(p))
+    let finalValue = parseFloat(value.toFixed(precision))
     return finalValue;
   }
 
