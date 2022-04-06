@@ -21,7 +21,7 @@ class RangeSlider extends Component {
       incrementSize
     } = this.props
 
-    if (!isFinite(incrementSize)) return 0;
+    if (!isFinite(incrementSize) || incrementSize <= 0) return value;
     var e = 1, p = 0;
     while (Math.round(incrementSize * e) / e !== incrementSize) { e *= 10; p++; }
 
@@ -76,7 +76,7 @@ class RangeSlider extends Component {
     const padding = Math.ceil(markerSize / 2)
     const paddingStyles = { paddingLeft: padding, paddingRight: padding }
     const sliderLength = width - padding * 2
-    
+
     return (
       <View
         style={[styles.wrapper, paddingStyles]}
