@@ -23,9 +23,11 @@ class RangeSlider extends Component {
 
     // precision function => obtains number of digits after decimal point of incrementSize
     if (!isFinite(incrementSize) || incrementSize <= 0) return value;
-    let multiplier = 1, precision = 0;
+    let multiplier = 1
+    let precision = 0
     while (Math.round(incrementSize * multiplier) / multiplier !== incrementSize) { 
-      multiplier *= 10; precision++; 
+      multiplier *= 10 
+      precision++
     }
 
     let finalValue = parseFloat(value.toFixed(precision))
