@@ -16,13 +16,28 @@ class RangeSlider extends Component {
     }
   }
 
+  roundLabelValue = value => {
+    const {
+      incrementSize
+    } = this.props
+
+    if (!isFinite(incrementSize)) return 0;
+    var e = 1, p = 0;
+    while (Math.round(incrementSize * e) / e !== incrementSize) { e *= 10; p++; }
+
+    var finalValue = parseFloat(value.toFixed(p))
+    return finalValue;
+  }
+
   sliderValuesChange = values => {
     // database onchange props
     const {
-      controlledValue: { onChange },
+      controlledValue: { onChange }
     } = this.props
 
-    return onChange(values[0])
+    const finalValue = this.roundLabelValue(values[0])
+
+    return onChange(finalValue)
   }
 
   render() {
@@ -61,6 +76,9 @@ class RangeSlider extends Component {
     const padding = Math.ceil(markerSize / 2)
     const paddingStyles = { paddingLeft: padding, paddingRight: padding }
     const sliderLength = width - padding * 2
+
+    console.log("LABELS", [trackValue])
+    console.log("INCREMENT SIZE GIVEN", incrementSize)
 
     return (
       <View
@@ -114,6 +132,7 @@ class RangeSlider extends Component {
                     ? track.styles.bodyFont
                     : { fontFamily: _fonts.body }
                 }
+                roundLabelValue={this.roundLabelValue}
               />
             )}
             // database

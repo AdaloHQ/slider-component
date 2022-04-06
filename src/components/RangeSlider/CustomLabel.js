@@ -57,7 +57,11 @@ class CustomLabel extends Component {
       oneMarkerValue,
       oneMarkerLeftPosition,
       oneMarkerPressed,
+      roundLabelValue
     } = this.props
+
+    const roundedMarkerValue = roundLabelValue(oneMarkerValue)
+
     const { bgColor, font, txtColor, labelRounding } = this.props
     return (
       <View style={{ position: 'relative' }}>
@@ -68,7 +72,7 @@ class CustomLabel extends Component {
           font={font}
           labelRounding={labelRounding}
           position={oneMarkerLeftPosition}
-          value={oneMarkerValue}
+          value={roundedMarkerValue}
           leftDiff={leftDiff}
           pressed={oneMarkerPressed}
         />
