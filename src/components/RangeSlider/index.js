@@ -122,21 +122,27 @@ class RangeSlider extends Component {
             )}
             // labels
             enableLabel={enabled}
-            customLabel={props => (
-              <CustomLabel
-                {...props}
-                bgColor={bgColor}
-                txtColor={txtColor}
-                font={font}
-                labelRounding={labelRounding}
-                bodyFont={
-                  track.styles
-                    ? track.styles.bodyFont
-                    : { fontFamily: _fonts.body }
-                }
-                roundLabelValue={this.roundLabelValue}
-              />
-            )}
+            customLabel={props => {
+              let { oneMarkerValue } = props
+              oneMarkerValue = this.roundLabelValue(oneMarkerValue)
+
+              return (
+                <CustomLabel
+                  {...props}
+                  oneMarkerValue={oneMarkerValue}
+                  bgColor={bgColor}
+                  txtColor={txtColor}
+                  font={font}
+                  labelRounding={labelRounding}
+                  bodyFont={
+                    track.styles
+                      ? track.styles.bodyFont
+                      : { fontFamily: _fonts.body }
+                  }
+                  roundLabelValue={this.roundLabelValue}
+                />
+              )
+            }}
             // database
             onValuesChangeFinish={this.sliderValuesChange}
             sliderLength={sliderLength}
