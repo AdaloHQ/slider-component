@@ -141,7 +141,6 @@ class RangeSlider extends Component {
                       ? track.styles.bodyFont
                       : { fontFamily: _fonts.body }
                   }
-                  roundLabelValue={this.roundLabelValue}
                 />
               )
             }}
