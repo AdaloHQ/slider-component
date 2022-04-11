@@ -21,6 +21,8 @@ class RangeSlider extends Component {
       incrementSize
     } = this.props
 
+    if (!value) return value;
+
     // precision function => obtains number of digits after decimal point of incrementSize
     if (!isFinite(incrementSize) || incrementSize <= 0) return value;
     let multiplier = 1
@@ -29,8 +31,8 @@ class RangeSlider extends Component {
       multiplier *= 10 
       precision++
     }
-
-    let finalValue = parseFloat(value.toFixed(precision))
+    
+    let finalValue = parseFloat(parseFloat(value).toFixed(precision))
     return finalValue;
   }
 
@@ -123,7 +125,7 @@ class RangeSlider extends Component {
             // labels
             enableLabel={enabled}
             customLabel={props => {
-              let { oneMarkerValue } = props
+              let { oneMarkerValue } = props 
               oneMarkerValue = this.roundLabelValue(oneMarkerValue)
 
               return (
@@ -139,6 +141,7 @@ class RangeSlider extends Component {
                       ? track.styles.bodyFont
                       : { fontFamily: _fonts.body }
                   }
+                  roundLabelValue={this.roundLabelValue}
                 />
               )
             }}
