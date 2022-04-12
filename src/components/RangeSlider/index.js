@@ -16,13 +16,35 @@ class RangeSlider extends Component {
     }
   }
 
+  roundLabelValue = value => {
+    const {
+      incrementSize
+    } = this.props
+
+    if (!value) return value;
+
+    // precision function => obtains number of digits after decimal point of incrementSize
+    if (!isFinite(incrementSize) || incrementSize <= 0) return value;
+    let multiplier = 1
+    let precision = 0
+    while (Math.round(incrementSize * multiplier) / multiplier !== incrementSize) { 
+      multiplier *= 10 
+      precision++
+    }
+    
+    let finalValue = parseFloat(parseFloat(value).toFixed(precision))
+    return finalValue;
+  }
+
   sliderValuesChange = values => {
     // database onchange props
     const {
-      controlledValue: { onChange },
+      controlledValue: { onChange }
     } = this.props
 
-    return onChange(values[0])
+    const finalValue = this.roundLabelValue(values[0])
+
+    return onChange(finalValue)
   }
 
   render() {
@@ -102,20 +124,26 @@ class RangeSlider extends Component {
             )}
             // labels
             enableLabel={enabled}
-            customLabel={props => (
-              <CustomLabel
-                {...props}
-                bgColor={bgColor}
-                txtColor={txtColor}
-                font={font}
-                labelRounding={labelRounding}
-                bodyFont={
-                  track.styles
-                    ? track.styles.bodyFont
-                    : { fontFamily: _fonts.body }
-                }
-              />
-            )}
+            customLabel={props => {
+              let { oneMarkerValue } = props 
+              oneMarkerValue = this.roundLabelValue(oneMarkerValue)
+
+              return (
+                <CustomLabel
+                  {...props}
+                  oneMarkerValue={oneMarkerValue}
+                  bgColor={bgColor}
+                  txtColor={txtColor}
+                  font={font}
+                  labelRounding={labelRounding}
+                  bodyFont={
+                    track.styles
+                      ? track.styles.bodyFont
+                      : { fontFamily: _fonts.body }
+                  }
+                />
+              )
+            }}
             // database
             onValuesChangeFinish={this.sliderValuesChange}
             sliderLength={sliderLength}

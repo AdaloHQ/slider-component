@@ -56,8 +56,9 @@ class CustomLabel extends Component {
       leftDiff,
       oneMarkerValue,
       oneMarkerLeftPosition,
-      oneMarkerPressed,
+      oneMarkerPressed
     } = this.props
+
     const { bgColor, font, txtColor, labelRounding } = this.props
     return (
       <View style={{ position: 'relative' }}>
